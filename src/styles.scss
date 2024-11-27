@@ -2,3 +2,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+  .mat-mdc-dialog-inner-container {
+    --mdc-dialog-container-shape: 8px !important; /* Reduce the border radius */
+    border-radius: 8px !important;
+  }

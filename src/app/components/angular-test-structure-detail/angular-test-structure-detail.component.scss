@@ -28,3 +28,9 @@
   .detail-value {
     flex-grow: 1;
   }
+
+  button[mat-dialog-close] {
+    border: none !important;
+    background: none;
+    cursor: pointer;
+  }

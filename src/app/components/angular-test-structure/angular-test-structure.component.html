@@ -10,7 +10,7 @@
       <!-- ID field in anotomical structure -->
       <mat-form-field appearance="outline">
         <mat-label>ID</mat-label>
-        <input matInput [value]="structure.id || 'N/A'" readonly /> <!-- if there is no id for a structure, no details will be shown and only N/A displayed. -->
+        <input matInput [value]="structure.id || 'ID not available'" readonly /> <!-- if there is no id for a structure, no details will be shown and rather than crashing it will just display id not available. -->
       </mat-form-field>
     </div>
   </div>

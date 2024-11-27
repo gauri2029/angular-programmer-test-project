@@ -28,7 +28,7 @@ IRI ( iri )
 Upon fetching the detailed information, I have displayed the details in a modal dialog. (Angular Material's MatDialog component is used for the modal functionality.)
 *The modal contains the fetched data along with a close button for dismissing the modal.
 
-# Error Handling: For structures that do not have an ID, I have displayed appropriate error messages. This handles edge cases and ensures that the application remains stable even with incomplete data.
+- Error Handling: For structures that do not have an ID, I have displayed appropriate error messages. This handles edge cases and ensures that the application remains stable even with incomplete data.
 
 - The AppState class is used to manage the state of the anatomical structures. The FetchStructures action is dispatched from the component to fetch the data from the API, and the state is updated using the tap operator from RxJS. NGXS ensures that the application follows a unidirectional data flow.
 

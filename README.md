@@ -1,27 +1,42 @@
-# AngularProgrammerTestNew
+# Angular Programmer Test- Anatomical Structures
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
 
-## Development server
+This is a project to retrieve data from APIs and display it on the interface.
+#I have used Angular 18 for this project.
+# API link-
+All structures- https://apps.humanatlas.io/asctb-api/v2/1SqNmcPDB8PrZF1BhzgdKBxkfLcCR8VYMAkSIbnK_AXA/949267305
+Example Structure link- https://www.ebi.ac.uk/ols/api/ontologies/uberon/terms?iri=http://purl.obolibrary.org/obo/UBERON_0002302
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Phase-I:
+1. The project has 2 components-
+1. AngularTestStructureComponent - it will display all the retrieved structures initially.
+2. AngularTestStructureDetailComponent - after clicking on any one of the names of the structure, it will display a dialog with the following details-
+Name ( label )
+Description ( description or annotation.definition )
+Ontology Link ( obo_id )
+IRI ( iri )
 
-## Code scaffolding
+2. I used Angular's HttpClient to perform HTTP GET requests and handle the response asynchronously for this task.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. I created a data service for fetching and filtering unique anatomical structures by name using a Map to avoid duplicates.
+4. I created a state for this project using Ngxs (https://www.ngxs.io/)- The state is updated with the fetched data and made available to the component via the Store.
+5. The unique anatomical structures list is bound to an observable (structures$) fetched using NGXS and the DataService.
 
-## Build
+# Phase-II:
+- When a structure is clicked, the ID of the structure is passed to the API, and additional details (name, description, ontology link, and IRI) are fetched asynchronously.
+Upon fetching the detailed information, I have displayed the details in a modal dialog. (Angular Material's MatDialog component is used for the modal functionality.)
+*The modal contains the fetched data along with a close button for dismissing the modal.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Error Handling: For structures that do not have an ID, I have displayed appropriate error messages. This handles edge cases and ensures that the application remains stable even with incomplete data.
 
-## Running unit tests
+- The AppState class is used to manage the state of the anatomical structures. The FetchStructures action is dispatched from the component to fetch the data from the API, and the state is updated using the tap operator from RxJS. NGXS ensures that the application follows a unidirectional data flow.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- I have inserted the data fetching logic in a dedicated DataService, while I have handled the state management logic separately in the AppState class.
 
-## Running end-to-end tests
+* Angular Material: The project uses Angular Material to enhance the UI. The modal dialog for displaying structure details is created using the MatDialog component, and I have used other Angular Material components such as MatCard, MatInput, and MatFormField to structure the UI components. While the UI design is simple, I focused primarily on the functionality of the project.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- For extra points, I deployed the application to GitHub Pages, allowing everyone to view it directly in their web browser.
+- The deployment process involved building the Angular project and pushing the build files to the GitHub Pages branch.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- References- https://www.ngxs.io/, https://material.angular.io/, https://v18.angular.dev/overview

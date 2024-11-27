@@ -1,1 +1,25 @@
-<p>angular-test-structure-detail works!</p>
+<mat-dialog-content style="padding: 24px; padding-top: 5px;">
+    <div class="dialog-header">
+      <h2 mat-dialog-title style="padding: 0 !important;">{{ detail?.name }}</h2>
+      <button mat-icon-button mat-dialog-close  aria-label="Close">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  
+    <div class="dialog-details">
+      <div class="detail-row">
+        <span class="detail-label">Description:</span>
+        <span class="detail-value">{{ detail.description }}</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">Ontology Link:</span>
+        <span class="detail-value">{{ detail.ontologyLink }}</span>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">IRI:</span>
+        <span class="detail-value">{{ detail.iri }}</span>
+      </div>
+    </div>
+  </mat-dialog-content>

@@ -1,0 +1,30 @@
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dialog-header {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .dialog-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  
+  .detail-row {
+    display: flex;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    margin-right: 8px;
+    min-width: 120px;
+  }
+  
+  .detail-value {
+    flex-grow: 1;
+  }

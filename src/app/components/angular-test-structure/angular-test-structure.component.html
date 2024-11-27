@@ -1,1 +1,17 @@
-<p>angular-test-structure works!</p>
+<h2 style="margin-left: 4%; margin-top: 2%;">Anatomical Structures Data</h2>
+<div class="container">
+  <div class="row">
+    <div class="anotomical_structures" *ngFor="let structure of structures$ | async">
+      <!-- Name field in the anotomical structure -->
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input class="nameField" matInput [value]="structure.name" (click)="viewDetails(structure)" />
+      </mat-form-field>
+      <!-- ID field in anotomical structure -->
+      <mat-form-field appearance="outline">
+        <mat-label>ID</mat-label>
+        <input matInput [value]="structure.id || 'N/A'" readonly /> <!-- if there is no id for a structure, no details will be shown and only N/A displayed. -->
+      </mat-form-field>
+    </div>
+  </div>
+</div>
